@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>Document</title>
+    <style>
+      i {
+        display: block !important;
+        margin: 5px;
+      }
+
+      .button {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        cursor: pointer;
+        box-shadow: 4px 4px 12px 1px rgba(0, 0, 0, 0.348);
+      }
+
+      .button:hover {
+        background-color: blue;
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <i class="fa-solid fa-cart-shopping"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-bag-shopping"></i>
+    <i class="fa-solid fa-house"></i>
+    <i class="fa-solid fa-user"></i>
+    <i class="fa-solid fa-chevron-right"></i>
+    <i class="fa-solid fa-chevron-up"></i>
+    <i class="fa-solid fa-chevron-down"></i>
+    <i class="fa-solid fa-chevron-left"></i>
+    <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-ellipsis"></i>
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+    <i class="fa-solid fa-file-invoice"></i>
+
+    <div class="button"></div>
+
+    <table>
+      <form action="">
+        <tr>
+          <td>
+            <label for="name">Name:</label>
+          </td>
+          <td>
+            <input type="text" placeholder="Enter your name" id="input" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email">Email:</label>
+          </td>
+          <td>
+            <input type="email" placeholder="Enter your email" id="input2" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="password">Ans</label>
+          </td>
+          <td>
+            <input type="input" id="output" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="reset" />
+            <input type="button" value="Submit" id="ans" />
+          </td>
+        </tr>
+      </form>
+    </table>
+
+    <div class="create"></div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const input = document.getElementById("input");
+      const input2 = document.getElementById("input2");
+      const output = document.getElementById("output");
+      const ansButton = document.getElementById("ans");
+      const create = document.querySelector(".create");
+
+      ansButton.addEventListener("click", () => {
+        let arr = input.value.trim().split(" ");
+        arr.sort((a, b) => {
+          return a.charAt(0) > b.charAt(0) ? 1 : -1;
+        });
+        console.log(arr);
+        output.value = arr.join(" ");
+
+        let dnew = document.createElement("p");
+        dnew.textContent = "Hello World";
+
+        create.appendChild(dnew);
+      });
+    });
+  </script>
+</html>
